@@ -1,6 +1,6 @@
 #include "My_Thread.h"
 
-// 时钟线程
+//******************** 时钟线程 ******************************
 // 创建恢复WIFI链接
 Thread reflash_OpenWifi = Thread();
 // 创建时间更新函数线程
@@ -72,6 +72,6 @@ void Supervisor_controller()
 	if (controller.shouldRun()) // 是否在运行
 	{
 		controller.run();
-		controller.setInterval(300); // 设置线程的间隔
+		controller.setInterval(200); // 设置线程的间隔
 	}
 }

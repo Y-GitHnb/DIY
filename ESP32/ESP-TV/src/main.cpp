@@ -14,21 +14,24 @@ void setup()
 
 	TFT_Init(); // TFT 初始化
 
-	// Button_Init(); // 按键初始化
+	Button_Init(); // 按键初始化
 
-	// Wifi_Init(); // Wifi 初始化
+	Wifi_Init(); // Wifi 初始化
 
-	// TJpgDec_Init(); // 图片解码
-	// Show_WS();		// 温湿度图片
+	TJpgDec_Init();	 // 图片解码
+	Show_WS();		 // 温湿度图片
+	getCityWeater(); // 获取显示天气
 
-	// Thread_Init(); // 线程任务
+	Thread_Init(); // 线程任务
 }
 
 void loop()
 {
-	// Button_sw.loop(); // 按钮轮询
+	Button_sw.loop(); // 按钮轮询
+	// page += getEncoderTurn();
 
-	// Supervisor_controller(); // 守护线程池
-	// WIFI_reflash_All();		 // WIFI应用
-	// Serial_set();			 // 串口响应
+	Serial_set(); // 串口响应
+
+	Supervisor_controller(); // 守护线程池
+	WIFI_reflash_All();		 // WIFI应用
 }

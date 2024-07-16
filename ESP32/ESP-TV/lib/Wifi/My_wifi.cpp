@@ -17,9 +17,9 @@ config_type wificonf = {{"TP-LINK_8ACF"}, {"zh111111"}};
 void Wifi_Init()
 {
 	// 在初始化中使wifi重置，需重新配置WiFi
-	Serial.println("(Configuration) Wifi reset...");
-	Delete_WifiConfig();
-	wm.resetSettings();
+	// Serial.println("(Configuration) Wifi reset...");
+	// Delete_WifiConfig();
+	// wm.resetSettings();
 
 	Read_WifiConfig(wificonf); // 读取存储的 wifi 信息
 
@@ -30,7 +30,7 @@ void Wifi_Init()
 
 	while (WiFi.status() != WL_CONNECTED) // 没连上
 	{
-		loading(30);
+		loading(30, wificonf.stassid);
 
 		if (loadNum >= (TFT_WIDTH - 40) - 6)
 		{
@@ -47,9 +47,10 @@ void Wifi_Init()
 	delay(10);
 
 	while (loadNum < (TFT_WIDTH - 40) - 6) // 让动画走完
-		loading(1);
+		loading(1, wificonf.stassid);
 
 	TFT_Close(); // 清屏
+	show_str("获取配置中...");
 
 	if (WiFi.status() == WL_CONNECTED) // 配网成功
 	{
@@ -72,11 +73,12 @@ void Wifi_Init()
 	Serial.println("(Init) Start UDP...");
 	Udp.begin(localPort); // 初始化 WiFiUDP 库和网络设置，启动 WiFiUDP 套接字，侦听指定的本地端口
 
+	TFT_Close(); // 清屏
+	get_City();	 // 获取城市代码
+
 	Serial.println("(Answer) Wait for synchronization..."); // 等待同步
 	setSyncProvider(getNtpTime);							// 同步时间
 	setSyncInterval(300);									// 5 分钟同步一次（5*60）
-
-	get_City();
 }
 
 /// @brief 重置 Wifi

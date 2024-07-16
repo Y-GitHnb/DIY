@@ -42,10 +42,13 @@ extern String scrollText[7];	   // 滚动文本
 extern uint8_t text_Index;		   // 滚动文本循环索引
 
 // 动画
-#define Animate_Choice 2			 // 动图选择：1,太空人图片 2,胡桃
+#define Animate_Choice 1			 // 动图选择：1,太空人图片 2,胡桃
 extern const uint8_t *Animate_value; // 指向关键帧的指针
 extern uint32_t Animate_size;		 // 指向关键帧大小的指针
+extern const uint8_t *Anilove_value; // 指向关键帧的指针
+extern uint32_t Anilove_size;		 // 指向关键帧大小的指针
 extern int Amimate_reflash_Time;	 // 更新时间记录
+extern int Amilove_reflash_Time;	 // 更新时间记录
 
 // 天气
 struct Weather_Msg
@@ -76,6 +79,46 @@ extern String monthDay();
 extern int Hour_sign;	// 小时
 extern int Minute_sign; // 分钟
 extern int Second_sign; // 秒
+
+// ##################### 纪念日页面配置 #####################################
+// 页面
+#define CLOCK_PAGE 0
+#define LOVE_PAGE 1
+#define MISSU_PAGE 2
+extern byte page;
+extern byte pre_page; // 切换前一个页面,后面单击退出时能够回到之前的页面
+extern byte role;
+
+#define DEFAULT_WORDS "{\"word\":\"因有着你，跟你一起，亲爱的你\"}" // 只能修改汉字内容
+#define WORD_UPDATE_TIME 3											// 情话切换时间单位 - 分钟
+#define ANIMATE_CHANGE_FREQUENTCE 20								// 动画切换频次，20此切换一张
+
+#define BUTTOM_WORD "@M&G since 2021.06.25" // 纪念日页面底部文字
+
+#define YEAR 2021 // 纪念日 年
+#define MONTH 6	  // 纪念日  月
+#define DAY 25	  // 纪念日  日
+
+// ##################### 想你页面配置 #####################################
+// mqtt 配置
+#define MQTT_IP "test.ranye-iot.net" // mqtt服务器地址  test.ranye-iot.net
+
+#define RECEIVER 0
+#define SENDER 1
+
+// 1是我的小电视，0是女朋友的小电视
+#if 0
+#define OUT_TOPIC "my" // 本机要推送消息的主题
+#define IN_TOPIC "you" // 本机订阅消息的主题
+#else
+#define OUT_TOPIC "yqy" // 本机要推送消息的主题
+#define IN_TOPIC "zl"	// 本机订阅消息的主题
+#endif
+
+#define IN_MSG "imu"		  // 收到消息
+#define IN_MSG_CHECK "check"  // 收到消息确认
+#define OUT_MSG "imu"		  // 推送消息
+#define OUT_MSG_CHECK "check" // 推送消息确认
 
 void Serial_set();
 

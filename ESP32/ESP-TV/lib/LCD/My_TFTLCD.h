@@ -34,12 +34,13 @@ void TFT_Init();												  // TFT 初始化
 void TJpgDec_Init();											  // 图片解码库初始化
 void TFT_Close();												  // 清屏
 void Show_WS();													  // 显示图片
-void loading(byte delayTime);									  // 绘制 WIFI 进度条
+void loading(byte delayTime, char stassid[]);					  // 绘制 WIFI 进度条
 void Web_Show();												  // WEB 配网显示函数
 void weater_Show(String *cityDZ, String *dataSK, String *dataFC); // 天气信息写到屏幕上
 void digitalClockDisplay(int reflash_en = 0);					  // 日期刷新
 void scrollBanner();											  // 显示天气信息
 void DHT11_Show();												  // 显示 DHT11 数据
 void LCD_reflash();												  // 强制屏幕刷新
+void show_str(const char *string);								  // 显示指定字体
 
 #endif

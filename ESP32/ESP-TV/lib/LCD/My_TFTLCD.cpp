@@ -77,8 +77,10 @@ void TFT_Close()
 
 /// @brief  绘制 WIFI 进度条
 /// @param delayTime 当前进度延时时间
-void loading(byte delayTime)
+void loading(byte delayTime, char stassid[])
 {
+	const char *wifi_name = stassid;
+
 	clk.setColorDepth(8);											  // 设置颜色像素位数（1 4 8 16）
 	clk.createSprite(TFT_WIDTH - 40, 100);							  // 创建窗口
 	clk.fillSprite(BAKCGROUND_COLOR);								  // 填充
@@ -89,7 +91,7 @@ void loading(byte delayTime)
 	clk.setTextColor(TFT_GREEN, BAKCGROUND_COLOR);					  // 设置字体显示区域的颜色，含背景颜色和字体颜色
 	clk.drawString("连接 WiFi 中.....", (TFT_WIDTH - 40) / 2, 40, 2); // 指定文字显示在画布的指定位置
 	clk.setTextColor(TFT_RED, BAKCGROUND_COLOR);
-	clk.drawRightString(Version, 180, 60, 2);
+	clk.drawRightString(wifi_name, 180, 60, 2);
 	clk.pushSprite(20, 120); // 将画图推送至屏幕的指定位置
 	clk.deleteSprite();		 // 删除画布
 	clk.unloadFont();		 // 卸载字体，释放资源（RAM）
@@ -483,17 +485,34 @@ void LCD_reflash()
 	open_Wifi();
 }
 
-/// @brief clk
-void clk_norm()
+/// @brief 显示指定字符串
+void show_str(const char *string)
 {
-	clk.setColorDepth(16);						 // 设置颜色像素位数（1 4 8 16）
-	clk.createSprite(128, 60);					 // 创建指定大小的画布（需小于屏幕的最大尺寸）
-	clk.fillSprite(BAKCGROUND_COLOR);			 // 设置画布的填充颜色
-	clk.loadFont(My_Font);						 // 加载显示的字体（自制的字库）
-	clk.setTextDatum(CC_DATUM);					 // 设置文本位置参考基准, CC_DATUM 设置为上下左右居中
-	clk.setTextColor(TFT_RED, BAKCGROUND_COLOR); // 设置字体显示区域的颜色，含背景颜色和字体颜色（背景颜色与画布填充颜色一致，不然很丑）
-	clk.drawString("么巧宇", 64, 30);			 // 指定文字显示在画布的指定位置
-	clk.pushSprite(0, 60);						 // 将画图推送至屏幕的指定位置
-	clk.deleteSprite();							 // 删除画布
-	clk.unloadFont();							 // 卸载字体，释放资源（RAM）
+	clk.setColorDepth(16);							  // 设置颜色像素位数（1 4 8 16）
+	clk.createSprite(TFT_WIDTH - 40, 60);			  // 创建指定大小的画布（需小于屏幕的最大尺寸）
+	clk.fillSprite(BAKCGROUND_COLOR);				  // 设置画布的填充颜色
+	clk.loadFont(My_Font);							  // 加载显示的字体（自制的字库）
+	clk.setTextDatum(CC_DATUM);						  // 设置文本位置参考基准, CC_DATUM 设置为上下左右居中
+	clk.setTextColor(TFT_RED, BAKCGROUND_COLOR);	  // 设置字体显示区域的颜色，含背景颜色和字体颜色（背景颜色与画布填充颜色一致，不然很丑）
+	clk.drawString(string, (TFT_WIDTH - 40) / 2, 30); // 指定文字显示在画布的指定位置
+	clk.pushSprite(20, 90);							  // 将画图推送至屏幕的指定位置
+	clk.deleteSprite();								  // 删除画布
+	clk.unloadFont();								  // 卸载字体，释放资源（RAM）
+}
+
+// 用快速线方法绘制数字
+void drawLineFontForDay(uint32_t _x, uint32_t _y, uint32_t _num, uint32_t _size, uint32_t _color)
+{
+	uint32_t fontSize;
+	const LineAtom *fontOne;
+	fontOne = middleLineFont[_num];
+	fontSize = middleLineFont_size[_num];
+
+	// 绘制前清理字体绘制区域  周围填充4像素
+	tft.fillRoundRect(_x - 4, _y - 4, 26, 38, 4, TFT_WHITE);
+
+	for (uint32_t i = 0; i < fontSize; i++)
+	{
+		tft.drawFastHLine(fontOne[i].xValue + _x, fontOne[i].yValue + _y, fontOne[i].lValue, _color);
+	}
 }

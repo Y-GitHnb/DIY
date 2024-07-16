@@ -7,10 +7,18 @@ String scrollText[7];	// 滚动文本
 uint8_t text_Index = 0; // 滚动文本循环索引
 int prevTime = 0;		// 滚动显示更新标志位
 
+// 显示页面
+byte page = 0;
+byte pre_page = CLOCK_PAGE; // 切换前一个页面,后面单击退出时能够回到之前的页面
+byte role = RECEIVER;
+
 // 动画
 const uint8_t *Animate_value; // 指向关键帧的指针
 uint32_t Animate_size;		  // 指向关键帧大小的指针
+const uint8_t *Anilove_value; // 指向关键帧的指针
+uint32_t Anilove_size;		  // 指向关键帧大小的指针
 int Amimate_reflash_Time = 0; // 更新时间记录
+int Amilove_reflash_Time = 0; // 更新时间记录
 
 // Wifi
 uint8_t Wifi_en = 1;		  // WIFI模块启动  1：打开    0：关闭
