@@ -1,0 +1,32 @@
+lock\pwr.o: ..\Src\pwr.c
+lock\pwr.o: ../Inc/pwr.h
+lock\pwr.o: ../Inc/main.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+lock\pwr.o: ../Inc/stm32f1xx_hal_conf.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+lock\pwr.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+lock\pwr.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+lock\pwr.o: ../Drivers/CMSIS/Include/core_cm3.h
+lock\pwr.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stdint.h
+lock\pwr.o: ../Drivers/CMSIS/Include/cmsis_version.h
+lock\pwr.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+lock\pwr.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+lock\pwr.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+lock\pwr.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stddef.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
