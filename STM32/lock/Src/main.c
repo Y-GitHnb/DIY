@@ -56,7 +56,7 @@ int main(void)
     HAL_UART_Receive_IT(&huart3, &UART3_data, 1);
     HAL_UART_Transmit(&huart3, "USART3 Init", 11, HAL_MAX_DELAY); 
 
-    MX_I2C1_Init();
+    // MX_I2C1_Init();
     OLED_Init();
     OLED_ShowString_fun("OLED_OK!");
     
@@ -65,17 +65,27 @@ int main(void)
     
     mode = READ_KEY;
     
-    if(mode == 0)
-    {
-        OLED_ShowString_fun("4G_Mode");
-        IMD750_TASK();
-    }
-    
-    else if(mode == 1)
-    {
-        OLED_ShowString_fun("Wifi_Mode");
-        ESP8266_TASK();
-    }
+//    if(mode == 0)
+//    {
+//        OLED_ShowString_fun("4G_Mode");
+//        IMD750_TASK();
+//    }
+//    
+//    else if(mode == 1)
+//    {
+//        OLED_ShowString_fun("Wifi_Mode");
+//        ESP8266_TASK();
+//    }
+
+	while(1)
+	{
+		if(UART3_Rx_flg == 1)
+		{
+			usart3_printf("abcdefg\r\n");
+			UART3_Rx_flg = 0;
+		}
+	}
+		
 }
 
 

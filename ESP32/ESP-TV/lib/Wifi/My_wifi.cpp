@@ -7,7 +7,7 @@ WiFiUDP Udp = WiFiUDP();
 uint16_t localPort = 8000; // 侦听的本地端口号
 
 // wifi 名称密码
-config_type wificonf = {{"TP-LINK_8ACF"}, {"zh111111"}};
+config_type wificonf = {};
 
 /**
  * 初始化
@@ -17,9 +17,9 @@ config_type wificonf = {{"TP-LINK_8ACF"}, {"zh111111"}};
 void Wifi_Init()
 {
 	// 在初始化中使wifi重置，需重新配置WiFi
-	// Serial.println("(Configuration) Wifi reset...");
-	// Delete_WifiConfig();
-	// wm.resetSettings();
+	Serial.println("(Configuration) Wifi reset...");
+	Delete_WifiConfig();
+	wm.resetSettings();
 
 	Read_WifiConfig(wificonf); // 读取存储的 wifi 信息
 

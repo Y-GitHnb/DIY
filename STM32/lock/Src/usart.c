@@ -56,6 +56,7 @@ int fputc(int ch, FILE *f)
 uint8_t UART1_Rx_Buf[MAX_REC_LENGTH] = {0}; //USART1存储接收数据
 uint16_t UART1_Rx_cnt = 0;                  //USART1接受数据计数器
 uint8_t UART1_temp[REC_LENGTH] = {0};       //USART1接收数据缓存
+uint8_t UART1_Rx_flg = 0;                   //USART3接收完成标志
 
 // UART3
 uint8_t UART3_Rx_Buf[UART3_Rx_COUNT] = {0}; //USART3存储接收数据

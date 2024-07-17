@@ -7,14 +7,14 @@ lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 lock\main.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 lock\main.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 lock\main.o: ../Drivers/CMSIS/Include/core_cm3.h
-lock\main.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stdint.h
+lock\main.o: D:\0Install\Keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
 lock\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
 lock\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 lock\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 lock\main.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-lock\main.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stddef.h
+lock\main.o: D:\0Install\Keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
 lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
@@ -31,9 +31,9 @@ lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 lock\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 lock\main.o: ../Inc/tim.h
 lock\main.o: ../Inc/usart.h
-lock\main.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stdarg.h
-lock\main.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stdio.h
-lock\main.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\string.h
+lock\main.o: D:\0Install\Keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdarg.h
+lock\main.o: D:\0Install\Keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
+lock\main.o: D:\0Install\Keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
 lock\main.o: ..\HARDWARE\Inc\oled.h
 lock\main.o: ../Inc/i2c.h
 lock\main.o: ..\HARDWARE\Inc\oled_ZK.h

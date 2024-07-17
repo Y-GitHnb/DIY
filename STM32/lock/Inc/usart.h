@@ -51,6 +51,7 @@ extern UART_HandleTypeDef huart3;
 extern uint8_t UART1_Rx_Buf[MAX_REC_LENGTH];
 extern uint16_t UART1_Rx_cnt;
 extern uint8_t UART1_temp[REC_LENGTH];
+extern uint8_t UART1_Rx_flg;
 
 extern uint8_t UART3_Rx_Buf[UART3_Rx_COUNT];
 extern uint8_t UART3_data;

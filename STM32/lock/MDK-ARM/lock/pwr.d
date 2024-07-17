@@ -8,14 +8,14 @@ lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 lock\pwr.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 lock\pwr.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 lock\pwr.o: ../Drivers/CMSIS/Include/core_cm3.h
-lock\pwr.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stdint.h
+lock\pwr.o: D:\0Install\Keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
 lock\pwr.o: ../Drivers/CMSIS/Include/cmsis_version.h
 lock\pwr.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 lock\pwr.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 lock\pwr.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-lock\pwr.o: D:\Keil\Keil MDK\Install\ARM\ARMCC\Bin\..\include\stddef.h
+lock\pwr.o: D:\0Install\Keil\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
 lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 lock\pwr.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
