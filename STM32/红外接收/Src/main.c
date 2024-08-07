@@ -94,7 +94,9 @@ int main(void)
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
 	MX_DMA_Init();
+	MX_TIM1_Init();
 	MX_TIM2_Init();
+	MX_TIM3_Init();
 	MX_USART1_UART_Init();
 	/* USER CODE BEGIN 2 */
 
@@ -113,6 +115,21 @@ int main(void)
 			printf("HW is %d\r\n", g_remote_data);
 			HAL_Delay(10);
 		}
+
+		if (!Read_KEY)
+		{
+			IR_LED_SendNEC(0X00, 0x1C);
+			HAL_Delay(20);
+		}
+		else
+		{
+			__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
+			HAL_Delay_us(560);
+		}
+		
+		printf("HW\r\n");
+		//HAL_Delay_us(1000);
+		HAL_Delay(100);
 		
 		/* USER CODE END WHILE */
 
